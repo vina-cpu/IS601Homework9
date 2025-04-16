@@ -38,6 +38,11 @@ jobs:
       - name: Create qr_codes directory
         run: |
             mkdir -p qr_codes
+      
+      - name: Check qr_codes permissions
+        run: |
+            ls -ld qr_codes
+            chmod -R 777 qr_codes
           
       - name: Run tests with Pytest
         run: pytest
